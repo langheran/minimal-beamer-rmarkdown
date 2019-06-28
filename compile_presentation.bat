@@ -1,0 +1,12 @@
+makeglossaries "presentation"
+del "presentation.aux"
+del "presentation.bcf"
+del "presentation.blg"
+del "presentation.log"
+del "presentation.out"
+del "presentation.tex"
+del "presentation.thm"
+del "presentation.synctex.gz"
+del "presentation.bbl"
+Rscript -e "rmarkdown::render('presentation.Rmd', encoding = 'UTF-8', output_file = 'presentation.pdf');"
+if %errorlevel% neq 0 pause

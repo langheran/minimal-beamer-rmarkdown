@@ -1,0 +1,146 @@
+% \setbeameroption{hide notes}  
+% \setbeameroption{show notes}  
+\setbeameroption{hide notes}   
+\setbeamertemplate{note page}[plain]
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{graphicx}
+\usepackage{rotating}
+%\setbeamertemplate{caption}[numbered]
+
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage[normalem]{ulem}
+%\mode<presentation>
+
+\usepackage[pdf]{graphviz}
+\usepackage{dot2texi}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,automata}
+\usepackage{pgf-umlsd}
+
+
+% Nisim
+\setbeamertemplate{button}{\tikz
+  \node[
+  inner xsep=8pt,
+  draw=structure!80,
+  fill=structure!50,
+  rounded corners=4pt]  {\tiny\insertbuttontext};}
+% Nisim
+
+
+\usepackage{wasysym}
+\usepackage{amsmath}
+\usepackage[fencedCode,inlineFootnotes,citations,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}
+
+\setbeamertemplate{navigation symbols}{}
+\institute[]{}
+%\titlegraphic{\includegraphics[width=0.3\paperwidth]{\string images/logo.png}}
+\setbeamertemplate{title page}[empty]
+
+\setbeamerfont{subtitle}{size=\small}
+
+\setbeamercovered{transparent}
+
+\usepackage{xcolor}
+\PassOptionsToPackage{table,usenames,dvipsnames,rgb}{xcolor}
+%\usepackage[colorlinks = true,
+%linkcolor = blue,
+%urlcolor  = blue,
+%citecolor = blue,
+%anchorcolor = blue]{hyperref}
+\newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}%
+
+\newenvironment{variableblock}[3]{%
+	\setbeamerfont{block title}{size=\tiny}
+	\setbeamercolor{block body}{#2}
+	\setbeamercolor{block title}{#3}
+	\begin{block}{#1}}{\end{block}}
+\definecolor{myblue}{RGB}{71, 71, 186}
+\definecolor{Blue}{RGB}{71, 71, 186}
+
+\definecolor{clemsonpurple}{HTML}{522D80}
+\definecolor{clemsonorange}{HTML}{F66733}
+
+\setbeamercolor{section in head/foot}{fg=white}
+\addtobeamertemplate{headline}{\hypersetup{linkcolor=.}}{}
+\addtobeamertemplate{footline}{\hypersetup{linkcolor=.}}{}
+
+
+% \setbeamercolor{subsection in head/foot}{fg=white}
+% \setbeamercolor{frametitle}{fg=clemsonpurple,bg=white}
+% \setbeamercolor{title}{fg=clemsonpurple,bg=white}
+% \setbeamercolor{local structure}{fg=clemsonpurple}
+% \setbeamercolor{section in toc}{fg=clemsonpurple,bg=white}
+% \setbeamercolor{subsection in toc}{fg=clemsonorange,bg=white}
+
+% \setbeamercolor{item projected}{fg=clemsonpurple,bg=white}
+% \setbeamertemplate{itemize item}{\color{clemsonpurple}$\bullet$}
+% \setbeamertemplate{itemize subitem}{\color{clemsonpurple}\scriptsize{$\bullet$}}
+% \let\Tiny=\tiny
+
+\def\begincols{\begin{columns}}
+\def\begincol{\begin{column}}
+\def\endcol{\end{column}}
+\def\endcols{\end{columns}}
+
+\usepackage{environ}
+\NewEnviron{myonly}[0]{
+\only<1>{\BODY}
+}
+
+\let\Begin\begin
+\let\End\end
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\frametitle{Contents}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+% \AtBeginPart{}
+% \AtBeginSection{}
+% \AtBeginSubsection{}
+% \AtBeginSubsubsection{}
+% \setlength{\emergencystretch}{0em}
+% \setlength{\parskip}{0pt}
+
+\useinnertheme[shadow=true]{rounded}
+
+\usepackage{etoolbox}
+
+\setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!50!bg}
+
+\setbeamercolor{block title example}{use=example text,fg=example text.fg,bg=example text.fg!20!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!50!bg}
+
+\addtobeamertemplate{proof begin}{%
+    \setbeamercolor{block title}{fg=black,bg=red!50!white}
+    \setbeamercolor{block body}{fg=red, bg=red!30!white}
+}{}
+
+\BeforeBeginEnvironment{theorem}{
+    \setbeamercolor{block title}{fg=black,bg=orange!50!white}
+    \setbeamercolor{block body}{fg=orange, bg=orange!30!white}
+}
+\AfterEndEnvironment{theorem}{
+ \setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+ \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!50!bg, fg=black}
+}
+
+\BeforeBeginEnvironment{definition}{%
+    \setbeamercolor{block title}{fg=black,bg=pink!50!white}
+    \setbeamercolor{block body}{fg=pink, bg=pink!30!white}
+}
+\AfterEndEnvironment{definition}{
+ \setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+ \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!50!bg, fg=black}
+}
+
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{xleftmargin=12pt,xrightmargin=12pt, codes={\setlength{\textwidth}{0.5\textwidth}},fontsize=\normalsize,commandchars=\\\{\}}

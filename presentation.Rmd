@@ -1,0 +1,55 @@
+---
+title: "presentation"
+short-title: "presentation"
+subtitle: "presentation"
+author: "[*Nisim J. Hurst Tarrab*](mailto:langheran@gmail.com)"
+short-author: "Nisim Hurst"
+fontsize: 10pt
+date: Friday 28 June 2019
+shell-escape: true
+encoding: UTF-8
+# bibliography: bib.bib
+colorlinks: true
+linkcolor: "clemsonpurple"
+output:
+  beamer_presentation:
+    highlight: pygments
+    keep_tex: true
+    template: template.tex
+    incremental: true
+    colortheme: "dolphin"
+    theme: "CambridgeUS"
+    fonttheme: "structurebold"
+    toc: false
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true
+    includes:
+      after_body: table-of-contents.tex
+header-includes:
+  - \usepackage{xmpmulti}
+  - \usepackage{animate}
+  - \usepackage{multimedia}
+  - \input{clemson-beamer-header-simple.tex}
+  - \usepackage{hyperref}
+  - \usepackage{longtable,booktabs}
+  - \usepackage{caption}
+  - \makeatletter
+  - \def\fnum@table{\tablename~\thetable}
+  - \makeatother
+  - \usepackage{array}
+# - \input{../../glossary.tex}
+---
+
+# Introduction
+
+## Problem description
+
+\begincols
+\begincol{.48\textwidth}
+\endcol
+\begincol{.48\textwidth}
+\only<1>{
+}
+\endcol
+\endcols
